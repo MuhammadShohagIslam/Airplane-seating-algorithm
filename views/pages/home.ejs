@@ -1,0 +1,26 @@
+<!-- Including Header Layout through EJS's include() call -->
+<%- include('../layouts/header.ejs') %>
+
+<main>
+    <form action="/" method="post">
+        <input
+            type="text"
+            placeholder="Enter Your Programming Language"
+            name="pLangauge"
+        />
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        <!-- Working Conditional Statement Of EJS -->
+        <% if ( pLangaugeArray.length > 0 ) { %>
+        <!-- Using For Loop EJS Way -->
+        <% for(let i = 0; i < pLangaugeArray.length; i++){ %>
+        <!-- Rendering Variable through which we get output as a value -->
+        <li><%= pLangaugeArray[i] %></li>
+        <% } %> <% } %>
+    </ul>
+</main>
+
+<!-- Including Footer Layout through EJS's include() call -->
+<%- include('../layouts/footer.ejs') %>
