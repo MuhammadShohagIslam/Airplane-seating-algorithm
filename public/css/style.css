@@ -22,6 +22,11 @@ header {
     min-height: 5vh;
     background-color: #22577e;
 }
+.copy_indicator{
+    font-size: 18px;
+    color: #fff;
+    margin-top: 30px;
+}
 /* nav start */
 nav ul {
     display: flex;
@@ -45,7 +50,7 @@ nav ul li:hover {
 
 /* form start */
 .form{
-    width: 20%;
+    width: 27%;
     margin: 40px auto 0px;
 
 }
@@ -64,7 +69,7 @@ input {
     padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: 1.2rem;
-    width: 322px;
+    width: 353px;
 }
 ::-webkit-input-placeholder {
     font-size: 15px;
