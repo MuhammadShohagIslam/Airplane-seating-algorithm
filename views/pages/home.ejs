@@ -1,18 +1,44 @@
 <!-- Including Header Layout through EJS's include() call -->
-<%- include('../layouts/header.ejs') %>
+<%- include('../layouts/header.ejs'); %>
 
 <main>
-    <form action="/" method="post">
-        <input
-            type="text"
-            placeholder="Enter Your Programming Language"
-            name="seatRowColumns"
-        />
+    <form class="form" action="/" method="post">
+        <div class="control-form">
+            <label for="seatRowColumns">Row Columns Seat:</label>
+            <input
+                id="seatRowColumns"
+                type="text"
+                placeholder="[3,2],[4,3],[2,3],[3,4]"
+                name="seatRowColumns"
+            />
+        </div>
+        <div class="control-form">
+            <label for="passengers">Number of Passengers:</label>
+            <input
+                id="passengers"
+                type="number"
+                placeholder="30"
+                name="passengers"
+            />
+        </div>
         <button type="submit">Add</button>
     </form>
-
-    
+    <div class="seatRowColumns">
+       
+            <% airPlaneSeatingResult[0]?.seats?.map((row, rowI) => { %>
+                <div class="seatRowColumn">
+                    <% row.map((seat, seatI) => { %> 
+                        <% if (Number.isInteger(seat)) { %>
+                            <div class="row"><%= seat %></div>
+                        <% } %>
+                        <% if (seat === 'seat') { %>
+                            <div class="row_empty">A</div>
+                        <% } %>
+                    <% }); %>
+                </div>
+            <% }); %>
+    </div>
 </main>
 
 <!-- Including Footer Layout through EJS's include() call -->
-<%- include('../layouts/footer.ejs') %>
+<%- include('../layouts/footer.ejs'); -%>

@@ -5,17 +5,24 @@
     text-decoration: none;
     list-style: none;
 }
-
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+main {
+    min-height: 90vh;
+    background-color: #5584ac;
+    display: flex;
+    padding-top: 1rem;
+    align-items: center;
+    flex-direction: column;
+}
 header {
     min-height: 5vh;
     background-color: #22577e;
 }
+/* nav start */
 nav ul {
     display: flex;
     justify-content: center;
@@ -34,25 +41,23 @@ nav ul li a {
 nav ul li:hover {
     background-color: #0a89e4;
 }
+/* nav end */
 
-main {
-    min-height: 90vh;
-    background-color: #5584ac;
+/* form start */
+.form{
+    width: 20%;
+    margin: 40px auto 0px;
+
+}
+.control-form{
     display: flex;
-    padding-top: 1rem;
-    align-items: center;
     flex-direction: column;
+    margin-bottom: 10px;
 }
-.contact {
-    text-align: center;
-    min-height: 300px;
-    margin-top: 150px;
-}
-.contact h1 {
-    color: white;
-}
-.contact p {
-    color: white;
+.control-form label{
+    font-size: 23px;
+    color: #fff;
+    font-weight: 600;
 }
 input {
     border: none;
@@ -61,12 +66,9 @@ input {
     font-size: 1.2rem;
     width: 322px;
 }
-
-/* Edge */
 ::-webkit-input-placeholder {
     font-size: 15px;
 }
-/* Internet Explorer 10-11 */
 :-ms-input-placeholder {
     font-size: 15px;
 }
@@ -86,20 +88,60 @@ button {
 button:hover {
     background-color: rgb(3, 232, 156);
 }
+/* form end */
 
-main ul li {
-    background-color: white;
-    margin: 0.5rem 0;
-    width: 20rem;
-    padding: 0.5rem;
-    transition: all 0.3s;
+/* seating rwo and columns start */
+.seatRowColumns {
+    margin-top: 60px;
+    display: flex;
+    width: 42%;
 }
-main ul li:hover {
-    background-color: black;
+.seatRowColumn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.row {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(3, 232, 156);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.row_empty {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+/* seating rwo and columns end*/
+
+/* contact start*/
+.contact {
+    text-align: center;
+    min-height: 300px;
+    margin-top: 150px;
+}
+.contact h1 {
     color: white;
 }
+.contact p {
+    color: white;
+}
+/* contact end*/
 
+/* footer start*/
 footer {
     min-height: 7vh;
     background-color: #95d1cc;
 }
+/* footer end*/
