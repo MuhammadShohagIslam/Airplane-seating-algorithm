@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 // using static file
 app.use(express.static('public'));
 
-// using urllencoded middleware for using  form data
+// using urlencoded middleware for using  form data
 app.use(express.urlencoded({ extended: true }));
 
 // using json middleware for using  json data

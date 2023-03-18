@@ -1,7 +1,7 @@
 {
     "name": "ejs",
     "version": "1.0.0",
-    "description": "Practical EJS Practice",
+    "description": "airplane-seating-algorithm",
     "main": "app.js",
     "scripts": {
         "start": "nodemon app.js",
