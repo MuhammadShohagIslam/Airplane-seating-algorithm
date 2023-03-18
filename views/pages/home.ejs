@@ -2,6 +2,7 @@
 <%- include('../layouts/header.ejs'); %>
 
 <main>
+    <!-- form -->
     <form class="form" action="/" method="post">
         <div class="control-form">
             <label for="seatRowColumns">Row Columns Seat:</label>
@@ -23,8 +24,8 @@
         </div>
         <button type="submit">Add</button>
     </form>
+    <!-- show seat of passenger -->
     <div class="seatRowColumns">
-       
             <% airPlaneSeatingResult[0]?.seats?.map((row, rowI) => { %>
                 <div class="seatRowColumn">
                     <% row.map((seat, seatI) => { %> 

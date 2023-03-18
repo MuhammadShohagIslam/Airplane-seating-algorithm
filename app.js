@@ -1,4 +1,3 @@
-const ejs = require('ejs');
 const express = require('express');
 const AirplaneSeatingController = require('./controllers/airplane-seating');
 
@@ -31,7 +30,8 @@ app.get('/', (req, res) => {
     return  res.render('pages/home.ejs', { airPlaneSeatingResult, title: 'Home Page' });
   
 });
-console.log(airPlaneSeatingResult)
+
+// form data collect router
 app.post('/', (req, res) => {
     const { seatRowColumns, passengers } = req.body;
     const passenger = +passengers;
@@ -43,7 +43,8 @@ app.post('/', (req, res) => {
     airPlaneSeatingResult.length = 0;
     const result = new AirplaneSeatingController(seats, passenger);
     airPlaneSeatingResult.push(result.autoAssignedSeats);
-    res.redirect("/"); // redirect to the get Method
+    // redirect to the get Method
+    res.redirect("/"); 
     res.end();
 });
 
