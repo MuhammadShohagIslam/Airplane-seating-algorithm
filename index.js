@@ -1,5 +1,6 @@
 const express = require('express');
-const AirplaneSeatingController = require('./controllers/airplane-seating');
+const cors = require("cors");
+const AirplaneSeatingController = require('./helpers/airplane-seating');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 // using json middleware for using  json data
 app.use(express.json());
+app.use(cors());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -26,7 +28,6 @@ app.use((req, res, next) => {
 let airPlaneSeatingResult = [];
 // home router
 app.get('/', (req, res) => {
-    console.log(airPlaneSeatingResult)
     return  res.render('pages/home.ejs', { airPlaneSeatingResult, title: 'Home Page' });
   
 });
@@ -40,6 +41,7 @@ app.post('/', (req, res) => {
         const arr = ele.replace(bracketsRegex, '').split(',');
         return [+arr[0], +arr[1]];
     });
+    // reset previous array value
     airPlaneSeatingResult.length = 0;
     const result = new AirplaneSeatingController(seats, passenger);
     airPlaneSeatingResult.push(result.autoAssignedSeats);
