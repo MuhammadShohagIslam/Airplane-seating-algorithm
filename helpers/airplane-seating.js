@@ -5,6 +5,7 @@ class AirplaneSeatingController {
         this.assignedSeats = this.seats;
         this.nextSeatNumber = 1;
     }
+    // create the seat
     createSeats(input) {
         const maxColumns = Math.max(...input.map((arr) => arr[1]));
         let seats = [];
@@ -29,7 +30,8 @@ class AirplaneSeatingController {
         }
         return seats;
     }
-
+    
+    // final output of the assign seat
     get autoAssignedSeats() {
         this.assignAllSeats();
         return {
@@ -37,7 +39,7 @@ class AirplaneSeatingController {
             remainingPassengers: this.remainingPassengers,
         };
     }
-
+    
     assignAllSeats() {
         this.assignAisleSeats();
         this.assignWindowSeats();
